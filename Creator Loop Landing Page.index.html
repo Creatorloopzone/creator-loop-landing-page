@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Loop - The Premium Content Gigs HUB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Setting a modern, premium font */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0d0d0d; /* Deep Charcoal/Black */
+            
+            /* Background Image Integration - Subtle Pattern */
+            /* Using the uploaded file as a subtle background texture */
+            background-image: url('ChatGPT Image Nov 18, 2025, 04_29_49 PM.jpg');
+            background-size: 250px; /* Adjust size to make it a subtle pattern */
+            background-repeat: repeat;
+            background-blend-mode: overlay; /* Blend the pattern subtly with the black background */
+        }
+        /* Ensure the main content areas still provide high contrast */
+        .content-area {
+            background-color: rgba(13, 13, 13, 0.95); /* Semi-transparent overlay for readability */
+            backdrop-filter: blur(2px);
+        }
+
+
+        /* Custom class for the glowing holographic/electric gold text */
+        .holographic-text {
+            /* Mimics the iridescent color shift and glow */
+            background-image: linear-gradient(90deg, #ffde59 0%, #ffe89e 50%, #ffde59 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); /* Soft Gold Glow */
+        }
+        /* Premium Gold Button Style */
+        .gold-button {
+            background: linear-gradient(135deg, #FFD700 0%, #F5A623 100%); /* Real Gold Gradient */
+            color: #111; /* Black text for ultimate contrast */
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.6);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(255, 215, 0, 0.8);
+        }
+        .gold-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 165, 0, 0.8);
+        }
+        /* Style for the Step Cards to give them a 3D, metallic look */
+        .step-card {
+            background-color: #1a1a1a;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 5px 25px rgba(255, 215, 0, 0.1);
+            transition: all 0.3s;
+        }
+        .step-card:hover {
+            background-color: #262626;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+        }
+        /* Modal Backdrop */
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+        /* Modal Content Styling */
+        .modal-content {
+            background-color: #1a1a1a;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="text-white">
+
+
+    <!-- Header / Navigation -->
+    <header class="py-4 px-4 sm:px-6 lg:px-8 bg-black bg-opacity-90 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- TM ADDED HERE -->
+            <h1 class="text-3xl font-extrabold text-white">Creator<span class="holographic-text ml-1">Loop</span><span class="text-yellow-400 text-xs align-top ml-1">&trade;</span></h1>
+            <!-- Nav Item: Contact Us Button -->
+            <button onclick="openModal('contactModal')" class="px-5 py-2 text-sm font-semibold rounded-lg gold-button hidden sm:inline-flex">
+                CONTACT US
+            </button>
+        </div>
+    </header>
+
+
+    <!-- 1. LUXURY HERO SECTION (The HUB Messaging) -->
+    <section class="content-area relative pt-20 pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-gray-800">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Text Content -->
+            <div class="z-10 text-center lg:text-left">
+                <p class="text-xl font-semibold holographic-text uppercase tracking-widest mb-4">
+                    The Exclusive Digital HUB
+                </p>
+                <h2 class="text-5xl sm:text-7xl font-extrabold leading-tight mb-8">
+                    Your <span class="text-white">Central Point</span> for <span class="holographic-text">Paying Content Gigs.</span>
+                </h2>
+                <!-- TM ADDED HERE -->
+                <p class="text-2xl text-gray-300 mb-10">
+                    Creator Loop&trade; is the exclusive platform that connects you to paying gigs, turning your content into a **regular stream of USD/USDT crypto earnings.**
+                </p>
+                <!-- Main CTA Button - "JOIN THE LOOP" -->
+                <a href="#" id="hero-cta" class="inline-flex items-center justify-center px-12 py-4 text-xl font-bold rounded-lg gold-button hover:shadow-2xl">
+                    JOIN THE LOOP
+                </a>
+                <!-- Subtext -->
+                <p class="text-sm mt-4 text-gray-500">
+                    Application required to enter the Loop.
+                </p>
+            </div>
+
+
+            <!-- Image/Visuals Section (Gold/Holographic Digital Asset Mockup) -->
+            <div class="relative z-10 hidden lg:block">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900/50 p-6">
+                    <img 
+                        src="https://placehold.co/800x600/111/FFD700?text=AI+Blueprint+Vault+Access" 
+                        alt="Digital Blueprint Access" 
+                        class="w-full h-auto rounded-xl border border-yellow-700/50"
+                        onerror="this.onerror=null; this.src='https://placehold.co/800x600/111/FFD700?text=Digital+Content+Economy';"
+                    >
+                    <p class="text-center text-xl mt-4 text-yellow-400 font-bold tracking-widest">
+                        APPLY + LEARN + EARN
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 2. VALUE PROPOSITION SECTION (The 3 Steps: Post. Submit. Get Paid.) -->
+    <section class="content-area py-24 px-4 sm:px-6 lg:px-8 bg-[#111] bg-opacity-95 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-4xl font-extrabold text-center mb-16 holographic-text">
+                THE 3-STEP REVENUE PROTOCOL
+            </h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1: POST -->
+                <div class="text-center p-8 step-card rounded-2xl">
+                    <h4 class="text-4xl font-extrabold holographic-text mb-4">POST.</h4>
+                    <p class="text-gray-400 text-lg">
+                        Use our AI strategies to generate high-performing clips, get your 1st million views.
+                    </p>
+                </div>
+                <!-- Step 2: SUBMIT -->
+                <div class="text-center p-8 step-card rounded-2xl">
+                    <h4 class="text-4xl font-extrabold holographic-text mb-4">SUBMIT.</h4>
+                    <p class="text-gray-400 text-lg">
+                        Seamlessly upload your monetized content to the Clipping ecosystem.
+                    </p>
+                </div>
+                <!-- Step 3: GET PAID -->
+                <div class="text-center p-8 step-card rounded-2xl">
+                    <h4 class="text-4xl font-extrabold holographic-text mb-4">GET PAID.</h4>
+                    <p class="text-gray-400 text-lg">
+                        Receive guaranteed USD or USDT payouts directly based on your content's performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 3. CONTACT AND SIGN-UP FORM SECTION -->
+    <section class="content-area py-24 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-7xl mx-auto">
+            <!-- Contact Email / Info -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl mb-4">
+                    Partnership or Support Inquiry?
+                </h2>
+                <p class="text-xl text-gray-400 mb-6 max-w-2xl mx-auto">
+                    If you have questions about collaboration, direct support, or general inquiries, you can send a message directly to our team.
+                </p>
+                <!-- CTA to open the Contact Modal -->
+                <button onclick="openModal('contactModal')" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg gold-button hover:shadow-lg">
+                    CONTACT US
+                </button>
+            </div>
+
+
+            <!-- Form Card Wrapper (The Final CTA) -->
+            <div class="relative bg-black border-2 border-yellow-700/50 rounded-3xl shadow-[0_0_50px_rgba(255,215,0,0.3)] p-6 sm:p-10 lg:p-14">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Final CTA Header -->
+                    <p class="text-center text-lg font-semibold holographic-text uppercase tracking-wider mb-2">
+                        INITIATE YOUR APPLICATION
+                    </p>
+                    <h1 class="text-center text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl mb-8 leading-tight">
+                        SECURE ACCESS: <span class="holographic-text">APPLY ONLINE.</span>
+                    </h1>
+                    <!-- Final Paragraph -->
+                    <p class="text-center text-xl text-gray-400 mb-10">
+                        To claim your blueprint and gain access to the HUB, please click the link below to complete the application.
+                    </p>
+
+
+                    <!-- Direct Link Callout - "GET IN THE LOOP" -->
+                    <a href="#" id="footer-cta" class="block w-full text-center px-12 py-4 text-xl font-bold rounded-lg gold-button hover:shadow-2xl">
+                        GET IN THE LOOP
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. FOOTER -->
+    <footer class="content-area bg-[#111] bg-opacity-95 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 text-sm">
+            <!-- TM ADDED HERE -->
+            &copy; 2025 Creator Loop&trade;. All Rights Reserved. | Premium AI Earning Protocol.
+            <div class="mt-2">
+                Contact: <a href="mailto:team@creatorloop.net" class="text-yellow-500 hover:text-white transition duration-200">team@creatorloop.net</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- CONTACT MODAL (Hidden by default) -->
+    <div id="contactModal" class="fixed inset-0 hidden modal-backdrop items-center justify-center p-4">
+        <div class="modal-content w-full max-w-lg p-8 rounded-xl relative">
+            <button onclick="closeModal('contactModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <h3 class="text-3xl font-extrabold holographic-text mb-4 text-center">
+                Send a Direct Message
+            </h3>
+            <p class="text-gray-400 mb-6 text-center">
+                Fill out the fields below to start an email draft to our team at <span class="text-yellow-400 font-semibold">team@creatorloop.net</span>.
+            </p>
+
+
+            <form id="contactForm" onsubmit="submitContactForm(event)" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
+                    <input type="text" id="contactName" required class="w-full px-4 py-2 bg-[#0d0d0d] border border-gray-700 rounded-lg text-white focus:ring-yellow-500 focus:border-yellow-500">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Your Email</label>
+                    <input type="email" id="contactEmail" required class="w-full px-4 py-2 bg-[#0d0d0d] border border-gray-700 rounded-lg text-white focus:ring-yellow-500 focus:border-yellow-500">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                    <textarea id="contactMessage" rows="4" required class="w-full px-4 py-2 bg-[#0d0d0d] border border-gray-700 rounded-lg text-white focus:ring-yellow-500 focus:border-yellow-500"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 mt-4 text-lg font-bold rounded-lg gold-button">
+                    SEND MESSAGE
+                </button>
+                <div id="statusMessage" class="mt-4 text-center text-sm text-yellow-500 hidden">
+                    Opening your email client to send the message...
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END CONTACT MODAL -->
+
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.getElementById(id).classList.add('flex');
+        }
+
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.getElementById(id).classList.remove('flex');
+        }
+
+
+        function submitContactForm(event) {
+            event.preventDefault(); // Stop the default form submission
+
+
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const message = document.getElementById('contactMessage').value;
+            const statusMessage = document.getElementById('statusMessage');
+
+
+            // Set the target email and subject
+            const recipient = 'team@creatorloop.net';
+            const subject = encodeURIComponent(`Contact Inquiry from Creator Loop Landing Page (${name})`);
+            
+            // Build the email body
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+
+            // Construct the mailto link
+            const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+
+            // Show a temporary message and then trigger the email client
+            statusMessage.classList.remove('hidden');
+            
+            // Wait a moment before triggering the mailto link to allow the user to see the message
+            setTimeout(() => {
+                window.location.href = mailtoLink;
+                // Optionally close the modal after a short delay
+                setTimeout(() => {
+                    closeModal('contactModal');
+                    statusMessage.classList.add('hidden');
+                    document.getElementById('contactForm').reset(); // Clear form after success
+                }, 1000);
+            }, 100);
+        }
+        
+        // Function to set the sign-up link for the two main CTAs
+        function setFormLinks() {
+            // THE GOOGLE SHEET LINK IS NOW CORRECTLY PLACED HERE
+            const formUrl = "https://forms.gle/p1E9XzprcEDEyaGP6"; 
+
+
+            const heroCta = document.getElementById('hero-cta');
+            const footerCta = document.getElementById('footer-cta');
+            
+            if (heroCta) {
+                heroCta.href = formUrl;
+                heroCta.target = '_blank';
+            }
+            if (footerCta) {
+                footerCta.href = formUrl;
+                footerCta.target = '_blank';
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', setFormLinks);
+    </script>
+
+
+</body>
+</html>

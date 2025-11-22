@@ -13,6 +13,7 @@
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #0d0d0d; 
+            /* You can replace this with a subtle background image URL if desired */
             background-size: 260px;
             background-repeat: repeat;
             background-position: center;
@@ -67,6 +68,25 @@
             backdrop-filter: blur(3px);
             box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
         }
+        
+        /* Modal Backdrop */
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #1a1a1a;
+            border: 2px solid #333333;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
 
     </style>
 </head>
@@ -111,12 +131,18 @@
                 <p class="text-sm mt-4 text-gray-500">Application required to enter the Loop.</p>
             </div>
 
-            <!-- AI BLUEPRINT VAULT ACCESS BANNER -->
+            <!-- AI BLUEPRINT VAULT ACCESS BANNER (Updated with Placeholder) -->
             <div class="relative z-10 hidden lg:block">
                 <div class="relative rounded-3xl overflow-hidden vault-panel p-4 lg:p-6">
+                    <!-- 
+                        NOTE: Since we cannot use the local file 'vault-banner.png .jpg', 
+                        we are using a placeholder URL here. 
+                        Please replace the 'src' attribute below with your public image URL.
+                    -->
                     <img 
-                        src="vault-banner.png"
+                        src="https://placehold.co/600x400/1e293b/facc15?text=EXCLUSIVE+AI+VAULT+ACCESS"
                         alt="AI Blueprint Vault Access"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/facc15?text=BANNER+ERROR'"
                         class="w-full h-auto rounded-xl border border-yellow-700/40 shadow-lg"
                     >
                 </div>
@@ -216,17 +242,17 @@
 
             <form id="contactForm" onsubmit="submitContactForm(event)" class="space-y-4">
                 <div>
-                    <label class="block text-sm font-medium mb-1">Your Name</label>
+                    <label for="contactName" class="block text-sm font-medium mb-1">Your Name</label>
                     <input type="text" id="contactName" required class="w-full px-4 py-2 bg-[#0d0d0d] border border-gray-700 rounded-lg text-white">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium mb-1">Your Email</label>
+                    <label for="contactEmail" class="block text-sm font-medium mb-1">Your Email</label>
                     <input type="email" id="contactEmail" required class="w-full px-4 py-2 bg-[#0d0d0d] border border-gray-700 rounded-lg text-white">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium mb-1">Message</label>
+                    <label for="contactMessage" class="block text-sm font-medium mb-1">Message</label>
                     <textarea id="contactMessage" rows="4" required class="w-full px-4 py-2 bg-[#0d0d0d] border border-gray-700 rounded-lg text-white"></textarea>
                 </div>
 
@@ -237,23 +263,56 @@
     </div>
 
     <script>
-        function openModal(id){ document.getElementById(id).classList.remove('hidden'); document.getElementById(id).classList.add('flex'); }
-        function closeModal(id){ document.getElementById(id).classList.add('hidden'); document.getElementById(id).classList.remove('flex'); }
+        function openModal(id){ 
+            document.getElementById(id).classList.remove('hidden'); 
+            document.getElementById(id).classList.add('flex'); 
+        }
+        
+        function closeModal(id){ 
+            document.getElementById(id).classList.add('hidden'); 
+            document.getElementById(id).classList.remove('flex'); 
+        }
 
         function submitContactForm(event){
             event.preventDefault();
+            // Use querySelector to ensure we grab the elements even if not globally defined
+            const contactName = document.getElementById('contactName');
+            const contactEmail = document.getElementById('contactEmail');
+            const contactMessage = document.getElementById('contactMessage');
+
             const name = contactName.value;
             const email = contactEmail.value;
             const message = contactMessage.value;
             const recipient = 'team@creatorloop.net';
+            
             const subject = encodeURIComponent(`Contact Inquiry - ${name}`);
             const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage:\n${message}`);
+            
+            // Open the mail client
             window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+            // Optional: Provide visual feedback that the mailto link was triggered
+            const statusMessage = document.getElementById('statusMessage');
+            statusMessage.textContent = 'Opening email client...';
+            statusMessage.classList.remove('hidden');
+
+            // Optionally hide the modal after a short delay
+            setTimeout(() => {
+                closeModal('contactModal');
+                statusMessage.classList.add('hidden');
+                document.getElementById('contactForm').reset();
+            }, 500);
         }
 
         function setFormLinks() {
             const formUrl = "https://forms.gle/p1E9XzprcEDEyaGP6"; 
-            hero-cta.href = footer-cta.href = formUrl;
+            
+            // FIX: Use getElementById to correctly access elements
+            const heroCta = document.getElementById('hero-cta');
+            const footerCta = document.getElementById('footer-cta');
+
+            if (heroCta) heroCta.href = formUrl;
+            if (footerCta) footerCta.href = formUrl;
         }
         document.addEventListener('DOMContentLoaded', setFormLinks);
     </script>

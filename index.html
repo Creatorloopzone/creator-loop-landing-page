@@ -237,26 +237,48 @@
     </div>
 
     <script>
-        function openModal(id){ document.getElementById(id).classList.remove('hidden'); document.getElementById(id).classList.add('flex'); }
-        function closeModal(id){ document.getElementById(id).classList.add('hidden'); document.getElementById(id).classList.remove('flex'); }
+    function openModal(id){
+        document.getElementById(id).classList.remove('hidden');
+        document.getElementById(id).classList.add('flex');
+    }
 
-        function submitContactForm(event){
-            event.preventDefault();
-            const name = contactName.value;
-            const email = contactEmail.value;
-            const message = contactMessage.value;
-            const recipient = 'team@creatorloop.net';
-            const subject = encodeURIComponent(`Contact Inquiry - ${name}`);
-            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage:\n${message}`);
-            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    function closeModal(id){
+        document.getElementById(id).classList.add('hidden');
+        document.getElementById(id).classList.remove('flex');
+    }
+
+    function submitContactForm(event){
+        event.preventDefault();
+        const name = contactName.value;
+        const email = contactEmail.value;
+        const message = contactMessage.value;
+        const recipient = 'team@creatorloop.net';
+        const subject = encodeURIComponent(`Contact Inquiry - ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage:\n${message}`);
+        window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    }
+
+    function setFormLinks() {
+        const formUrl = "https://forms.gle/p1E9XzprcEDEyaGP6";
+
+        const heroBtn = document.getElementById("hero-cta");
+        const footerBtn = document.getElementById("footer-cta");
+
+        if (heroBtn) {
+            heroBtn.href = formUrl;
+            heroBtn.target = "_blank";
         }
 
-        function setFormLinks() {
-            const formUrl = "https://forms.gle/p1E9XzprcEDEyaGP6"; 
-            hero-cta.href = footer-cta.href = formUrl;
+        if (footerBtn) {
+            footerBtn.href = formUrl;
+            footerBtn.target = "_blank";
         }
-        document.addEventListener('DOMContentLoaded', setFormLinks);
-    </script>
+    }
+
+    document.addEventListener('DOMContentLoaded', setFormLinks);
+</script>
+
 
 </body>
 </html>
+
